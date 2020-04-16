@@ -1,5 +1,10 @@
 const emptyUser = {
-  username: ''
+  name: '',
+  username: '',
+	location:'',
+	friends: [],
+	pastRides: [],
+	upcomingRides: []
 }
 
 export const userInfo = (state = emptyUser, action) => {

@@ -68,7 +68,9 @@ class Login extends React.Component {
         <button
           onClick={this.handleSubmit}
           disabled={this.validateForm()}
-        >Submit</button>
+        >
+          Submit
+        </button>
       </form>
     )
   }

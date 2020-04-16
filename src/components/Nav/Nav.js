@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 const Nav = (props) => {
@@ -7,7 +8,11 @@ const Nav = (props) => {
       <div>
         Logo Here.
       </div>
-      <button>Login</button>
+      <Link
+        to="/login"
+      >
+        Login
+      </Link>
     </header>
   )
 }
