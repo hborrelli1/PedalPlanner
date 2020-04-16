@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { login } from '../../actions';
+import { connect } from 'react-redux';
 
 class Login extends React.Component {
   constructor() {
@@ -23,20 +25,32 @@ class Login extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
+    let validCredentials =
+      (this.state.username === this.state.defaultUser.username)
+        && (this.state.password === this.state.defaultUser.password);
+
+    if (validCredentials) {
+      console.log('Redirecting to hompage');
+      this.setState({ error: '' })
+      this.props.login({username: 'Harry'})
+    } else {
+      this.setState({ error: 'Username or Password are invalid.' });
+    }
   }
 
   validateForm = () => {
-    let validCredentials =
-      (this.state.username === this.state.defaultUser.username)
-      && (this.state.password === this.state.defaultUser.password);
+    let validateInputs =
+      (this.state.username !== '')
+      && (this.state.password !== '');
 
-    return validCredentials ? false : true;
+    return validateInputs ? false : true;
   }
 
   render () {
     return (
       <form>
         <h1>Login</h1>
+        <span>{this.state.error}</span>
         <input
           type='text'
           name='username'
@@ -54,10 +68,20 @@ class Login extends React.Component {
         <button
           onClick={this.handleSubmit}
           disabled={this.validateForm()}
-        >Login</button>
+        >
+          Submit
+        </button>
       </form>
     )
   }
 }
 
-export default Login;
+const mapStateToProps = (state) => ({
+  userInfo: state.userInfo,
+})
+
+const mapDispatchToProps = dispatch => ({
+  login: userInfo => dispatch( login(userInfo) ),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
