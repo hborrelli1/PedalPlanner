@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { login } from '../../actions';
+import { connect } from 'react-redux';
 
 class Login extends React.Component {
   constructor() {
@@ -30,6 +32,7 @@ class Login extends React.Component {
     if (validCredentials) {
       console.log('Redirecting to hompage');
       this.setState({ error: '' })
+      this.props.login({username: 'Harry'})
     } else {
       this.setState({ error: 'Username or Password are invalid.' });
     }
@@ -71,4 +74,12 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+const mapStateToProps = (state) => ({
+  userInfo: state.userInfo,
+})
+
+const mapDispatchToProps = dispatch => ({
+  login: userInfo => dispatch( login(userInfo) ),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
