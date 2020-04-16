@@ -1,0 +1,29 @@
+header {
+  width:100%;
+  padding:10px 30px;
+  display: flex;
+  flex-flow:wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color:$dark-blue;
+  height:90px;
+
+  .logo-block {
+    max-width:420px;
+    display: flex;
+    align-items: center;
+    font-size:3rem;
+    color:$orange;
+
+    img {
+      width:100%;
+      margin-right:20px;
+    }
+  }
+
+  nav {
+    .login-button {
+      @include buttonStyle;
+    }
+  }
+}

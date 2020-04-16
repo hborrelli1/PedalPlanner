@@ -1,0 +1,14 @@
+main {
+  height:100vh;
+  background-color:#000;
+  display: flex;
+  flex-flow:wrap;
+  // justify-content: flex-start;
+  // align-items:flex-start;
+}
+
+main.app-bg-img-layer {
+  width:100%;
+  background-size:cover;
+  background-position:33% 90px;
+}

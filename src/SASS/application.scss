@@ -1,0 +1,27 @@
+@import './_mixins.scss';
+@import './_variables.scss';
+
+@import '../components/Nav/Nav.scss';
+@import '../components/App/App.scss';
+@import '../components/Login/Login.scss';
+
+*,
+*:after,
+*:before {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Roboto Slab', serif;
+    font-weight:500;
+  }
+}

@@ -2,17 +2,22 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
+import logo from '../../svgs/PedalPlanner-logo.svg';
+
 const Nav = (props) => {
   return (
     <header>
-      <div>
-        Logo Here.
+      <div className="logo-block">
+        <img src={logo} />
       </div>
-      <Link
-        to="/login"
-      >
-        Login
-      </Link>
+      <nav>
+        <Link
+          to="/login"
+          className="login-button"
+          >
+          Login
+        </Link>
+      </nav>
     </header>
   )
 }

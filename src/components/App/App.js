@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, Link, Redirect } from 'react-router-dom'
+import { Route, Link, Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import Nav from '../Nav/Nav';
 import Login from '../Login/Login';
 
 import logo from '../../logo.svg';
-import './App.css';
+import backgroundImage from '../../images/mountain-bike-bg.jpg';
 
 class App extends React.Component {
   constructor() {
@@ -13,10 +14,27 @@ class App extends React.Component {
   }
 
   render() {
-    const { userInfo } = this.props;
+    const { userInfo, location } = this.props;
+    const backgroundStyle = location.pathname === '/login'
+      ? `url(${backgroundImage})`
+      : '';
+    const mainLoginClass = location.pathname === '/login'
+      ? 'app-bg-img-layer'
+      : '';
 
+    const mainStyle = {
+      backgroundImage: backgroundStyle,
+    }
+    // <div
+    //   style={mainStyle}
+    //   className='app-bg-img-layer'
+    // />
     return (
-      <main>
+      <main
+        style={mainStyle}
+        className={mainLoginClass}
+      >
+
         <Nav />
         {!userInfo.username && <Redirect to="/login" />}
         <Route
@@ -42,4 +60,4 @@ const mapStateToProps = state => ({
   userInfo: state.userInfo,
 })
 
-export default connect(mapStateToProps,null)(App);
+export default connect(mapStateToProps,null)(withRouter(App));
