@@ -3,6 +3,9 @@ import PropTypes from 'prop-types'
 import { login } from '../../actions';
 import { connect } from 'react-redux';
 
+import { apiGetLocalTrails } from '../../apiCalls/apiCalls';
+import { setLocalTrails } from '../../actions';
+
 class Login extends React.Component {
   constructor() {
     super();
@@ -30,9 +33,12 @@ class Login extends React.Component {
         && (this.state.password === this.state.defaultUser.password);
 
     if (validCredentials) {
-      console.log('Redirecting to hompage');
       this.setState({ error: '' })
       this.props.login({username: 'Harry'})
+      this.props.location.pathname = '/';
+      // Fetch all trails within 200 mile range of denver
+      apiGetLocalTrails()
+        .then(info => this.props.setTrails(info.trails))
     } else {
       this.setState({ error: 'Username or Password are invalid.' });
     }
@@ -47,6 +53,8 @@ class Login extends React.Component {
   }
 
   render () {
+
+
     return (
       <div className="login-wrapper">
         <div className="tagline-block">
@@ -85,10 +93,12 @@ class Login extends React.Component {
 
 const mapStateToProps = (state) => ({
   userInfo: state.userInfo,
+  localTrails: state.localTrails
 })
 
 const mapDispatchToProps = dispatch => ({
   login: userInfo => dispatch( login(userInfo) ),
+  setTrails: trails => dispatch( setLocalTrails(trails) )
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

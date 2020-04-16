@@ -1,25 +1,45 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { Link, withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 import logo from '../../svgs/PedalPlanner-logo.svg';
 
-const Nav = (props) => {
+import { logout } from '../../actions';
+
+const Nav = ({ userInfo, logout, location }) => {
+
+  const handleLogout = () => {
+    userInfo.username && logout();
+  }
+
   return (
     <header>
       <div className="logo-block">
         <img src={logo} />
       </div>
       <nav>
-        <Link
-          to="/login"
-          className="login-button"
+        {location.pathname !== '/login' && (
+          <Link
+            to="/login"
+            className="login-button"
+            onClick={() => handleLogout()}
           >
-          Login
-        </Link>
+            Login
+          </Link>
+        )}
+
       </nav>
     </header>
   )
 }
 
-export default Nav
+const mapStateToProps = (state) => ({
+  userInfo: state.userInfo,
+})
+
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch( logout() ),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Nav))

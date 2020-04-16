@@ -5,6 +5,8 @@ import { withRouter } from 'react-router';
 import Nav from '../Nav/Nav';
 import Login from '../Login/Login';
 
+import { apiGetLocalTrails } from '../../apiCalls/apiCalls';
+
 import logo from '../../logo.svg';
 import backgroundImage from '../../images/mountain-bike-bg.jpg';
 
@@ -14,7 +16,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { userInfo, location } = this.props;
+    const { userInfo, location, history } = this.props;
     const backgroundStyle = location.pathname === '/login'
       ? `url(${backgroundImage})`
       : '';
@@ -49,7 +51,7 @@ class App extends React.Component {
         />
         <Route
           path="/login"
-          render={() => <Login />}
+          render={() => <Login location={location} />}
         />
       </main>
     );
