@@ -1,0 +1,54 @@
+.login-wrapper {
+  height:calc(100% - 90px);
+  background-color:$dark-gray;
+  width:33%;
+
+  .tagline-block {
+    padding:100px 50px 50px;
+    max-width: 400px;
+    width: 100%;
+    p {
+      color:$light-blue;
+      span {
+        color:$orange;
+      }
+    }
+  }
+
+  form {
+    max-width: 400px;
+    width: 100%;
+    padding:50px;
+    color:#fff;
+
+    h1 {
+      color:$orange;
+      margin-bottom:20px;
+    }
+
+    .error-message {
+      color:$error-red;
+      margin-bottom:5px;
+      display:block;
+      letter-spacing:1px;
+    }
+
+    input {
+      width:100%;
+      background-color:$dark-blue;
+      border:0;
+      margin-bottom:10px;
+      border:0;
+      color:$off-white;
+      padding:5px 10px;
+      font-size:1.125rem;
+      @include inputPlaceholder() {
+        color: $off-white;
+      }
+    }
+
+    button {
+      @include buttonStyle;
+    }
+  }
+}

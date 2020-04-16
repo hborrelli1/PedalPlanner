@@ -48,30 +48,37 @@ class Login extends React.Component {
 
   render () {
     return (
-      <form>
-        <h1>Login</h1>
-        <span>{this.state.error}</span>
-        <input
-          type='text'
-          name='username'
-          placeholder='Username'
-          value={this.state.username}
-          onChange={this.handleChange}
-        />
-        <input
-          type='password'
-          name='password'
-          placeholder='Password'
-          value={this.state.password}
-          onChange={this.handleChange}
-        />
-        <button
-          onClick={this.handleSubmit}
-          disabled={this.validateForm()}
-        >
-          Submit
-        </button>
-      </form>
+      <div className="login-wrapper">
+        <div className="tagline-block">
+          <p><span>PLAN</span> a ride</p>
+          <p><span>INVITE</span> some friends</p>
+          <p><span>SHRED</span> the trials</p>
+        </div>
+        <form>
+          <h1>Sign In</h1>
+          <span className="error-message">{this.state.error}</span>
+          <input
+            type='text'
+            name='username'
+            placeholder='Username'
+            value={this.state.username}
+            onChange={this.handleChange}
+          />
+          <input
+            type='password'
+            name='password'
+            placeholder='Password'
+            value={this.state.password}
+            onChange={this.handleChange}
+          />
+          <button
+            onClick={this.handleSubmit}
+            disabled={this.validateForm()}
+          >
+            Submit
+          </button>
+        </form>
+      </div>
     )
   }
 }

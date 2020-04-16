@@ -1,0 +1,44 @@
+@mixin buttonStyle {
+  padding:10px 30px;
+  background-color:$orange;
+  color:$off-white;
+  border-radius:2px;
+  border:0;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-size:1rem;
+  margin-top:20px;
+
+  &:hover {
+    background-color:$dark-gray;
+  }
+}
+
+@mixin inputPlaceholder() {
+    $selector: '';
+    $prefixes: (
+        moz: "::-moz",
+        webkit: "::-webkit",
+        ie: ":-ms"
+    );
+    @each $prop, $value in $prefixes {
+        @if $prop != "moz" {
+            $selector: #{$value}-input-placeholder;
+        } @else {
+            $selector: #{$value}-placeholder;
+        }
+        @if & {
+            &#{$selector} {
+                @content;
+            }
+        } @else {
+            #{$selector} {
+                @content;
+            }
+        }
+    }
+    &::placeholder {
+      @content;
+    }
+}
