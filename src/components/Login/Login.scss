@@ -35,18 +35,13 @@
     }
 
     input {
-      width:100%;
-      background-color:$dark-blue;
-      border:0;
-      margin-bottom:10px;
-      border:0;
-      color:$off-white;
-      padding:5px 10px;
-      font-size:1.125rem;
+      @include inputStyling();
       @include inputPlaceholder() {
         color: $off-white;
       }
+      margin-bottom:10px;
     }
+
 
     button {
       @include buttonStyle;

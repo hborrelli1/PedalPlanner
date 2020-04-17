@@ -2,6 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
+import { Input } from 'semantic-ui-react'
+import InputIcon from '../InputIcon/InputIcon';
+
 class SearchBar extends React.Component {
   constructor() {
     super();
@@ -33,9 +36,9 @@ class SearchBar extends React.Component {
 
     return (
       <div className="search-wrapper">
-        <input
-          type="search"
-          placeholder="Find a trail for your next ride..."
+        <Input
+          icon='search'
+          placeholder='Find a trail for your next ride...'
           value={this.state.search}
           onChange={this.handleChange}
         />

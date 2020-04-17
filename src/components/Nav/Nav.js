@@ -13,11 +13,17 @@ const Nav = ({ userInfo, logout, location }) => {
     userInfo.username && logout();
   }
 
+  const logoPath = userInfo.username ? '/' : '/login';
+  const loginButtonText = userInfo.username ? 'Logout' : 'Login';
+
   return (
     <header>
-      <div className="logo-block">
+      <Link
+        to={logoPath}
+        className="logo-block"
+      >
         <img src={logo} />
-      </div>
+      </Link>
       <nav>
         {location.pathname !== '/login' && (
           <Link
@@ -25,7 +31,7 @@ const Nav = ({ userInfo, logout, location }) => {
             className="login-button"
             onClick={() => handleLogout()}
           >
-            Login
+            {loginButtonText}
           </Link>
         )}
 

@@ -1,4 +1,13 @@
 .search-wrapper {
   padding:50px;
   width:67%;
+
+  .ui.input {
+    input {
+      @include inputStyling();
+      @include inputPlaceholder() {
+        color: $off-white;
+      }
+    }
+  }
 }
