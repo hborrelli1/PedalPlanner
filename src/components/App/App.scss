@@ -1,8 +1,13 @@
 main {
-  height:100vh;
   background-color:$dark-gray;
   display: flex;
   flex-flow:wrap;
+
+  .dashboard {
+    height:calc(100vh - 90px);
+    width:100%;
+    display:flex;
+  }
 }
 
 main.app-bg-img-layer {

@@ -1,0 +1,16 @@
+.user-profile {
+  height:calc(100vh - 90px);
+  width:33%;
+  display: flex;
+  flex-direction: column;
+
+  .block {
+    padding:50px;
+  }
+
+  .ride-log {
+    background-color:$dark-blue;
+    padding:50px;
+    flex: 1;
+  }
+}

@@ -6,6 +6,7 @@ import { withRouter } from 'react-router';
 import Nav from '../Nav/Nav';
 import Login from '../Login/Login';
 import SearchBar from '../SearchBar/SearchBar';
+import UserProfile from '../UserProfile/UserProfile';
 
 import { apiGetLocalTrails } from '../../apiCalls/apiCalls';
 
@@ -29,10 +30,7 @@ class App extends React.Component {
     const mainStyle = {
       backgroundImage: backgroundStyle,
     }
-    // <div
-    //   style={mainStyle}
-    //   className='app-bg-img-layer'
-    // />
+
     return (
       <main
         style={mainStyle}
@@ -45,16 +43,16 @@ class App extends React.Component {
           exact
           path="/"
           render={() => (
-            <div>
+            <div className="dashboard">
+              <UserProfile />
               <SearchBar />
-              <p>UserProfile</p>
               <p>Dashboard</p>
             </div>
           )}
         />
         <Route
           path="/login"
-          render={() => <Login location={location} />}
+          render={() => <Login history={history} />}
         />
       </main>
     );

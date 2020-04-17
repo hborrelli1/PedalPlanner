@@ -28,14 +28,31 @@ class Login extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
+    const userData = {
+      name: 'Harry',
+      username: this.state.username,
+      location:'',
+      friends: ['Tyler', 'Jeff', 'Doug'],
+      pastRides: [
+        {
+          id: 1,
+          date: 'May 22',
+          trail: 'White Ranch Trail',
+          location: 'Golden, CO',
+          friends: ['Tyler', 'Jeff', 'Doug']
+        }
+      ],
+      upcomingRides: []
+    }
+
     let validCredentials =
       (this.state.username === this.state.defaultUser.username)
         && (this.state.password === this.state.defaultUser.password);
 
     if (validCredentials) {
       this.setState({ error: '' })
-      this.props.login({username: 'Harry'})
-      this.props.location.pathname = '/';
+      this.props.login(userData);
+      this.props.history.push('/');
       // Fetch all trails within 200 mile range of denver
       apiGetLocalTrails()
         .then(info => this.props.setTrails(info.trails))
