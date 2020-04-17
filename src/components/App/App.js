@@ -2,8 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Link, Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router';
+
 import Nav from '../Nav/Nav';
 import Login from '../Login/Login';
+import SearchBar from '../SearchBar/SearchBar';
 
 import { apiGetLocalTrails } from '../../apiCalls/apiCalls';
 
@@ -44,6 +46,7 @@ class App extends React.Component {
           path="/"
           render={() => (
             <div>
+              <SearchBar />
               <p>UserProfile</p>
               <p>Dashboard</p>
             </div>
