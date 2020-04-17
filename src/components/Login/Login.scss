@@ -2,6 +2,7 @@
   height:calc(100vh - 90px);
   background-color:$dark-gray;
   width:33%;
+  @include sideBarShadow;
 
   .tagline-block {
     padding:100px 50px 50px;
