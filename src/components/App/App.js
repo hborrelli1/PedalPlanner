@@ -36,8 +36,11 @@ class App extends React.Component {
         style={mainStyle}
         className={mainLoginClass}
       >
+        <Route
+          path="/"
+          render={() => <Nav location={location} />}
+        />
 
-        <Nav />
         {!userInfo.username && <Redirect to="/login" />}
         <Route
           exact

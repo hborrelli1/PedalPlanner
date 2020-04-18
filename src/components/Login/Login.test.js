@@ -41,6 +41,5 @@ describe('Login Test', () => {
     fireEvent.click(submitButton);
 
     expect(getByText('Username or Password are invalid.')).toBeInTheDocument();
-
   })
 })
