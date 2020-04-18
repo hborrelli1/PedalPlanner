@@ -1,6 +1,7 @@
 .search-wrapper {
-  padding:50px;
-  width:67%;
+  height:100%;
+  overflow:hidden;
+  overflow-y:scroll;
 
   .ui.input {
     input {
@@ -9,5 +10,32 @@
         color: $off-white;
       }
     }
+  }
+
+  .matching-trails {
+    display:flex;
+    flex-direction: column;
+    background-color:$light-blue;
+    overflow:hidden;
+    overflow-y: auto;
+
+    button {
+      width:100%;
+      background-color:transparent;
+      border:0;
+      font-size:1.2rem;
+      padding:10px 5px;
+      display: flex;
+      justify-content: flex-start;
+      border-bottom: 1px solid rgba($dark-blue, .5);
+
+      &:hover {
+        background-color:$off-white;
+        cursor:pointer;
+      }
+    }
+  }
+  .matching-trails.js-search {
+    padding:30px;
   }
 }

@@ -80,7 +80,7 @@ class Login extends React.Component {
           <p><span>SHRED</span> the trials</p>
         </div>
         <form>
-          <h1>Sign In</h1>
+          <h1><span>Sign In</span></h1>
           <span className="error-message">{this.state.error}</span>
           <input
             type='text'

@@ -21,12 +21,15 @@ const UserProfile = (props) => {
   return (
     <div className="user-profile">
       <div className="welcome-block block">
-        <h1><span>Welcome back,</span> Harry</h1>
+        <h1>
+          <span class="welcome">Welcome back,</span>
+          <span>Harry</span>
+      </h1>
       </div>
       <div className="ride-log block">
-        <h3>Upcoming Rides</h3>
+        <h2><span>Upcoming Rides</span></h2>
 
-        <h3>Past Rides</h3>
+        <h2><span>Past Rides</span></h2>
         {pastRideBlocks}
       </div>
     </div>

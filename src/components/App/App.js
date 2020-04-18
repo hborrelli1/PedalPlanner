@@ -45,8 +45,10 @@ class App extends React.Component {
           render={() => (
             <div className="dashboard">
               <UserProfile />
-              <SearchBar />
-              <p>Dashboard</p>
+              <div className="main-content">
+                <SearchBar />
+                <p>Dashboard</p>
+              </div>
             </div>
           )}
         />

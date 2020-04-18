@@ -7,6 +7,26 @@
 
   .block {
     padding:50px;
+
+    h2 {
+      @include headerStyle;
+    }
+  }
+
+  .welcome-block {
+    span {
+      display:block;
+      font-size:2.2rem;
+      color:#fff;
+      line-height:2.2rem;
+      color:$light-blue;
+    }
+    .welcome {
+      @include headerStyle;
+      font-size:1.3rem;
+      margin-bottom:10px;
+      border-bottom:2px solid $orange;
+    }
   }
 
   .ride-log {

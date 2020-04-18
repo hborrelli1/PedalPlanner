@@ -23,7 +23,7 @@
     color:#fff;
 
     h1 {
-      color:$orange;
+      @include headerStyle;
       margin-bottom:20px;
     }
 

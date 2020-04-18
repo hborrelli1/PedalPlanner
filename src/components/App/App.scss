@@ -2,12 +2,21 @@ main {
   background-color:$dark-gray;
   display: flex;
   flex-flow:wrap;
+  height:100vh;
+  overflow:hidden;
 
   .dashboard {
     height:calc(100vh - 90px);
     width:100%;
     display:flex;
     flex-flow:wrap;
+
+    .main-content {
+      padding:50px;
+      width:67%;
+      height:100%;
+
+    }
   }
 }
 
