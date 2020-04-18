@@ -7,6 +7,7 @@ header {
   align-items: center;
   background-color:$dark-blue;
   height:90px;
+  @include headerShadow;
 
   .logo-block {
     max-width:420px;

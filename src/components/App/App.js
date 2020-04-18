@@ -2,8 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Link, Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router';
+
 import Nav from '../Nav/Nav';
 import Login from '../Login/Login';
+import SearchBar from '../SearchBar/SearchBar';
+import UserProfile from '../UserProfile/UserProfile';
+
+import { apiGetLocalTrails } from '../../apiCalls/apiCalls';
 
 import logo from '../../logo.svg';
 import backgroundImage from '../../images/mountain-bike-bg.jpg';
@@ -14,7 +19,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { userInfo, location } = this.props;
+    const { userInfo, location, history } = this.props;
     const backgroundStyle = location.pathname === '/login'
       ? `url(${backgroundImage})`
       : '';
@@ -25,10 +30,7 @@ class App extends React.Component {
     const mainStyle = {
       backgroundImage: backgroundStyle,
     }
-    // <div
-    //   style={mainStyle}
-    //   className='app-bg-img-layer'
-    // />
+
     return (
       <main
         style={mainStyle}
@@ -41,15 +43,18 @@ class App extends React.Component {
           exact
           path="/"
           render={() => (
-            <div>
-              <p>UserProfile</p>
-              <p>Dashboard</p>
+            <div className="dashboard">
+              <UserProfile />
+              <div className="main-content">
+                <SearchBar />
+                <p>Dashboard</p>
+              </div>
             </div>
           )}
         />
         <Route
           path="/login"
-          render={() => <Login />}
+          render={() => <Login history={history} />}
         />
       </main>
     );

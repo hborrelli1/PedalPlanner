@@ -1,7 +1,8 @@
 .login-wrapper {
-  height:calc(100% - 90px);
+  height:calc(100vh - 90px);
   background-color:$dark-gray;
   width:33%;
+  @include sideBarShadow;
 
   .tagline-block {
     padding:100px 50px 50px;
@@ -22,7 +23,7 @@
     color:#fff;
 
     h1 {
-      color:$orange;
+      @include headerStyle;
       margin-bottom:20px;
     }
 
@@ -34,18 +35,13 @@
     }
 
     input {
-      width:100%;
-      background-color:$dark-blue;
-      border:0;
-      margin-bottom:10px;
-      border:0;
-      color:$off-white;
-      padding:5px 10px;
-      font-size:1.125rem;
+      @include inputStyling();
       @include inputPlaceholder() {
         color: $off-white;
       }
+      margin-bottom:10px;
     }
+
 
     button {
       @include buttonStyle;

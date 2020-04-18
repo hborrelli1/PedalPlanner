@@ -1,15 +1,22 @@
 import Login from './Login';
 import React from 'react';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducer from '../../reducers';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('Login Test', () => {
   it('should display the login form to the page', () => {
+    const store = createStore(rootReducer);
+
     const { getByText, getByPlaceholderText } = render(
-      <Login />
+      <Provider store={store}>
+        <Login />
+      </Provider>
     )
 
-    expect(getByText('Login')).toBeInTheDocument();
+    expect(getByText('Sign In')).toBeInTheDocument();
     expect(getByPlaceholderText('Username')).toBeInTheDocument();
     expect(getByPlaceholderText('Password')).toBeInTheDocument();
     expect(getByText('Submit')).toBeInTheDocument();
@@ -17,8 +24,12 @@ describe('Login Test', () => {
 
   it('should be able to login', () => {
     const mockLogin = jest.fn();
+    const store = createStore(rootReducer);
+
     const { getByText, getByPlaceholderText } = render(
-      <Login />
+      <Provider store={store}>
+        <Login />
+      </Provider>
     )
 
     const usernameInput = getByPlaceholderText('Username');
@@ -29,7 +40,7 @@ describe('Login Test', () => {
     fireEvent.change(passwordInput, { target: { value: 'password' }})
     fireEvent.click(submitButton);
 
-    expect(getByText('Username or Password doesn\'t exist')).toBeInTheDocument();
+    expect(getByText('Username or Password are invalid.')).toBeInTheDocument();
 
   })
 })

@@ -4,6 +4,10 @@
 @import '../components/Nav/Nav.scss';
 @import '../components/App/App.scss';
 @import '../components/Login/Login.scss';
+@import '../components/UserProfile/UserProfile.scss';
+@import '../components/SearchBar/SearchBar.scss';
+@import '../components/RideBlock/RideBlock.scss';
+@import '../components/SearchButton/SearchButton.scss';
 
 *,
 *:after,
@@ -23,5 +27,10 @@ body {
   h4 {
     font-family: 'Roboto Slab', serif;
     font-weight:500;
+  }
+
+  .ui.input {
+    width:100%;
+    margin-bottom:10px;
   }
 }

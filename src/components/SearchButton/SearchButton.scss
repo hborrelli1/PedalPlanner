@@ -1,0 +1,16 @@
+.trail-button {
+  display:flex;
+  align-items:center;
+  justify-content: flex-start;
+
+
+  img {
+    max-width:30px;
+    margin-right:10px;
+  }
+
+  .trail-location {
+    text-align:right;
+    flex:1;
+  }
+}

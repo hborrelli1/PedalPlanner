@@ -11,7 +11,8 @@
   margin-top:20px;
 
   &:hover {
-    background-color:$dark-gray;
+    opacity:.7;
+    cursor:pointer;
   }
 }
 
@@ -41,4 +42,34 @@
     &::placeholder {
       @content;
     }
+}
+
+@mixin sideBarShadow {
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.46);
+}
+
+@mixin headerShadow {
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.46);
+}
+
+@mixin inputStyling {
+  width:100%;
+  background-color:$dark-blue;
+  border:1px solid #000;
+  border-radius: 2px;
+  // margin-bottom:10px;
+  color:$off-white;
+  padding:8px 12px;
+  font-size:1.125rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: .925rem;
+}
+
+@mixin headerStyle {
+  span {
+    border-bottom:2px solid $orange;
+    padding-right: 30px;
+  }
+  color:$orange;
 }
