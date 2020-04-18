@@ -21,21 +21,11 @@ const Nav = ({ userInfo, logout, location }) => {
       <Link
         to={logoPath}
         className="logo-block"
+        data-testid='logo'
       >
         <img src={logo} />
       </Link>
-      <nav>
-        {location.pathname !== '/login' && (
-          <Link
-            to="/login"
-            className="login-button"
-            onClick={() => handleLogout()}
-          >
-            {loginButtonText}
-          </Link>
-        )}
 
-      </nav>
     </header>
   )
 }
@@ -48,4 +38,4 @@ const mapDispatchToProps = dispatch => ({
   logout: () => dispatch( logout() ),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Nav))
+export default connect(mapStateToProps, mapDispatchToProps)(Nav)
