@@ -22,5 +22,5 @@ describe('InputIcon Test', () => {
     fireEvent.change(input, { target: {value: 'cats'}});
 
     expect(getByDisplayValue('cats')).toBeInTheDocument();
-  })
+  });
 });
