@@ -54,11 +54,12 @@ class App extends React.Component {
                 <SearchBar
                   history={this.props.history}
                 />
-
+              
               </div>
             </div>
           )}
         />
+
         <Route
           path="/trails/:id"
           render={({ match, history }) => {

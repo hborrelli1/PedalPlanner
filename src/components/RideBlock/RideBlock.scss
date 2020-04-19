@@ -37,5 +37,16 @@
       max-width:20px;
       margin-right:20px;
     }
+    a {
+      color:$off-white;
+      text-decoration: underline;
+      transition:all .3s;
+
+      &:hover {
+        opacity:.7;
+        transition:all .3s;
+        text-decoration: none;
+      }
+    }
   }
 }

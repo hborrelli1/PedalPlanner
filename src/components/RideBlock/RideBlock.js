@@ -1,16 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import logoIcon from '../../svgs/pedalPlanner-logo-icon.svg';
+import { Link } from 'react-router-dom';
 
 import greenDifficulty from '../../svgs/green-difficulty.svg';
 import blueDifficulty from '../../svgs/blue-difficulty.svg';
 import blackDifficulty from '../../svgs/black-difficulty.svg';
 import doubleBlackDifficulty from '../../svgs/double-black-difficulty.svg'
 
-const RideBlock = ({ rideInfo }) => {
+const RideBlock = ({ rideInfo, status }) => {
+  let moment = require('moment');
   let trailDifficulty;
   let friendsList
-  const { id, date, trail, location, difficulty, friends } = rideInfo;
+  const { id, date, time, message, trail, trailId, location, difficulty, friends } = rideInfo;
+  const formattedDate = moment(date).format('MM/DD/YY');
 
   if (difficulty === 'green') {
     trailDifficulty = greenDifficulty;
@@ -28,16 +31,28 @@ const RideBlock = ({ rideInfo }) => {
     friendsList = 'Solo Ride'
   }
 
+  const blockStyle = {
+    opacity: status === 'past' ? '.5' : '1',
+  }
+
+  const messageDisplay = status === 'past' ? '' : (<div><h4><span>Message:</span></h4><p>- {message}</p></div>);
+
   return (
-    <div className="ride-block">
-      <p className="date">{date}</p>
+    <div className="ride-block" style={blockStyle}>
+      <p className="time">{time}</p>
+      <p className="date">{formattedDate}</p>
       <h4><span>Trail:</span></h4>
       <p>
         <img src={trailDifficulty} alt="Trail Difficulty" />
-        {trail} | {location}
+        <Link
+          to={`/trails/${trailId}`}
+        >
+          {trail} | {location}
+        </Link>
       </p>
       <h4><span>Friends:</span></h4>
       <p>{friendsList}</p>
+      {messageDisplay}
     </div>
   )
 }

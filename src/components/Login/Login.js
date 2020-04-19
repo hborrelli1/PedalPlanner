@@ -32,22 +32,40 @@ class Login extends React.Component {
       pastRides: [
         {
           id: 1,
-          date: 'May 22',
+          date: '2020-03-22',
+          time: '7:00pm',
           trail: 'White Ranch Trail',
+          trailId: 632917,
           difficulty: 'black',
           location: 'Golden, CO',
-          friends: ['Tyler', 'Jeff', 'Doug']
+          friends: ['Tyler', 'Jeff', 'Doug'],
+          message: "Let's shred boys!"
         },
         {
           id: 2,
-          date: 'May 28',
+          date: '2020-03-28',
+          time: '4:00pm',
           trail: 'Buffalo Creek Mini Tour',
+          trailId: 7008221,
           difficulty: 'black',
           location: 'Pine, CO',
-          friends: ['Spencer']
+          friends: ['Spencer'],
+          message: "Let's hit the brewery on our way back!"
         }
       ],
-      upcomingRides: []
+      upcomingRides: [
+        {
+          id: 1,
+          date: '2020-05-02',
+          time: '11:00am',
+          trail: 'The Whole Enchilada',
+          trailId: 4670265,
+          difficulty: 'black',
+          location: 'Moab, UT',
+          friends: ['Spencer', 'Jeff', 'Doug'],
+          message: "The plan is to leave Denver at 6pm the day before"
+        },
+      ]
     }
 
     let validCredentials =

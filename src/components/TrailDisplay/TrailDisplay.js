@@ -80,7 +80,9 @@ const TrailDisplay = ({ trail }) => {
         <blockquote>"{summary}"</blockquote>
       </p>
       <div className="plan-ride">
-        <RideForm />
+        <RideForm
+          trailInfo={trail}
+        />
       </div>
     </div>
   )

@@ -1,11 +1,11 @@
 const denver = {
-  lat: 'lat=39.7392&',
-  lon: 'lon=-104.9903&'
+  lat: 'lat=39.6553&',
+  lon: 'lon=-106.8287&'
 }
 const BASE_URL = 'https://www.mtbproject.com/data/';
 const KEY = 'key=200727340-18179035d847acc131a5863b82f49454';
 const MAX_DISTANCE = 'maxDistance=200&';
-const MAX_RESULTS = 'maxResults=250&';
+const MAX_RESULTS = 'maxResults=500&';
 
 
 

@@ -9,6 +9,7 @@ class RideForm extends React.Component {
     super();
     this.state = {
       date: '',
+      time: '',
       message: '',
       friends: [],
       isSubmitted: false
@@ -35,13 +36,19 @@ class RideForm extends React.Component {
 
   handleSubmitRideForm = (event) => {
     event.preventDefault();
+    const { trailInfo } = this.props;
     const ridePlan = {
       id: Date.now(),
       date: this.state.date,
+      time: this.state.time,
+      trail: trailInfo.name,
+      trailId: trailInfo.id,
+      location: trailInfo.location,
+      difficulty: trailInfo.difficulty,
       message: this.state.message,
       friends: this.state.friends
     }
-    // Add rideplan to global store
+
     this.props.planRide(ridePlan);
     this.setState({ isSubmitted: true });
   }
@@ -58,6 +65,7 @@ class RideForm extends React.Component {
   resetForm = () => {
     this.setState({
       date: '',
+      time: '',
       message: '',
       friends: [],
       isSubmitted: false
@@ -71,7 +79,7 @@ class RideForm extends React.Component {
 
     const friendsOptionsList = userInfo.friends
       ? userInfo.friends.map((friend, index) => (
-        <option value={`friend-${index}`}>{friend}</option>
+        <option value={friend}>{friend}</option>
       ))
       : '';
 
@@ -87,8 +95,22 @@ class RideForm extends React.Component {
               id="date"
               type="date"
               name="date"
-              placeholder="MM/DD/YY"
+              placeholder="YYYY-MM-DD"
               value={this.state.date}
+              onChange={this.handleChange}
+              required
+            />
+          </div>
+          <div className="form-block">
+            <label htmlFor="time">
+              <span>Time:</span>
+            </label>
+            <input
+              id="time"
+              type="text"
+              name="time"
+              placeholder="10:00AM"
+              value={this.state.time}
               onChange={this.handleChange}
               required
             />
