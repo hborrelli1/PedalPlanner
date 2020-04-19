@@ -5,7 +5,7 @@ import RideBlock from '../RideBlock/RideBlock';
 import { connect } from 'react-redux';
 
 const UserProfile = (props) => {
-  const { userInfo } = props;
+  const { userInfo, history } = props;
   let pastRideBlocks;
   let upcomingRideBlocks;
 
@@ -15,6 +15,7 @@ const UserProfile = (props) => {
           key={ride.id}
           rideInfo={ride}
           status='future'
+          history={history}
         />
       ))
     : upcomingRideBlocks =
@@ -26,6 +27,7 @@ const UserProfile = (props) => {
           key={ride.id}
           rideInfo={ride}
           status='past'
+          history={history}
         />
       ))
     : pastRideBlocks =

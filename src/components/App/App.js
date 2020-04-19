@@ -47,14 +47,14 @@ class App extends React.Component {
         <Route
           exact
           path="/"
-          render={() => (
+          render={({ history }) => (
             <div className="dashboard">
-              <UserProfile />
+              <UserProfile history={history} />
               <div className="main-content">
                 <SearchBar
                   history={this.props.history}
                 />
-              
+
               </div>
             </div>
           )}
@@ -66,7 +66,7 @@ class App extends React.Component {
             const trail = this.props.localTrails.find(trail => trail.id === parseInt(match.params.id));
 
             return (<div className="dashboard">
-              <UserProfile />
+              <UserProfile history={history} />
               <div className="main-content">
                 <SearchBar
                   history={this.props.history}
