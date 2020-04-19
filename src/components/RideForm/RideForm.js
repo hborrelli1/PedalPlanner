@@ -20,9 +20,6 @@ class RideForm extends React.Component {
   }
 
   handleFriends = (event) => {
-    console.log(event.target.value);
-    console.log(typeof event.target.value);
-
     if (event.target.value === ('default')) {
       this.setState({ friends: [] })
     } else if (this.state.friends.includes(event.target.value)) {

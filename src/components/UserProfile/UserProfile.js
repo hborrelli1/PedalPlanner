@@ -9,7 +9,7 @@ const UserProfile = (props) => {
   let pastRideBlocks;
   let upcomingRideBlocks;
 
-  props.upcomingRides.length
+  userInfo.upcomingRides.length
     ? upcomingRideBlocks = userInfo.upcomingRides.map(ride => (
         <RideBlock
           key={ride.id}
@@ -20,7 +20,7 @@ const UserProfile = (props) => {
     : upcomingRideBlocks =
       <p>No upcoming rides to display. Time to plan another ride!</p>;
 
-  props.pastRides.length
+  userInfo.pastRides.length
     ? pastRideBlocks = userInfo.pastRides.map(ride => (
         <RideBlock
           key={ride.id}
@@ -51,8 +51,8 @@ const UserProfile = (props) => {
 
 const mapStateToProps = (state) => ({
   userInfo: state.userInfo,
-  upcomingRides: state.userInfo.upcomingRides,
-  pastRides: state.userInfo.pastRides,
+  // upcomingRides: state.userInfo.upcomingRides,
+  // pastRides: state.userInfo.pastRides,
 })
 
 export default connect(mapStateToProps,null)(UserProfile);

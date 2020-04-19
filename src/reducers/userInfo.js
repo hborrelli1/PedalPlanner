@@ -23,10 +23,11 @@ export const userInfo = (state = emptyUser, action) => {
     case 'LOGOUT':
       return state = emptyUser;
     case 'PLAN_RIDE':
-      const updatedRides = [...state.upcomingRides, action.ride]
-      state.upcomingRides = updatedRides
-      console.log(state);
-      return state = state;
+      let updatedUserInfo = {...state};
+      updatedUserInfo.upcomingRides = [...state.upcomingRides, action.ride];
+      // const updatedRides = [...state.upcomingRides, action.ride]
+      // state.upcomingRides = updatedRides
+      return state = updatedUserInfo;
     default:
       return state
   }
