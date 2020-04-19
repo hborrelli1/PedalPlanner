@@ -7,6 +7,7 @@ import Nav from '../Nav/Nav';
 import Login from '../Login/Login';
 import SearchBar from '../SearchBar/SearchBar';
 import UserProfile from '../UserProfile/UserProfile';
+import Charts from '../Charts/Charts';
 import TrailDisplay from '../TrailDisplay/TrailDisplay';
 
 import { apiGetLocalTrails } from '../../apiCalls/apiCalls';
@@ -54,7 +55,7 @@ class App extends React.Component {
                 <SearchBar
                   history={this.props.history}
                 />
-
+                <Charts userInfo={userInfo} />
               </div>
             </div>
           )}

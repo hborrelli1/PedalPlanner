@@ -8,6 +8,7 @@
 @import '../components/SearchBar/SearchBar.scss';
 @import '../components/RideBlock/RideBlock.scss';
 @import '../components/SearchButton/SearchButton.scss';
+@import '../components/Charts/Charts.scss';
 @import '../components/TrailDisplay/TrailDisplay.scss';
 @import '../components/RideForm/RideForm.scss';
 
@@ -24,6 +25,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  letter-spacing:1px;
 
   h1,
   h2,
