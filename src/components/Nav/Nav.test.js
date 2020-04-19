@@ -28,7 +28,7 @@ describe('Nav Tests', () => {
     expect(getByText('Login')).toBeInTheDocument();
   });
 
-  it('should be able to render to the DOM without logo if url is "/login"', () => {
+  it('should be able to render to the DOM without button if url is "/login"', () => {
     const locationMock = { pathname: '/login' };
     const store = createStore(rootReducer);
 
@@ -46,28 +46,28 @@ describe('Nav Tests', () => {
     expect(queryByText('Login')).toBeNull();
   });
 
-  it('should be able to click Login', () => {
+  it('should be able to click Logout', () => {
     const locationMock = { pathname: '/' };
-    const handleLogoutMock = {logout: jest.fn()};
-    const store = createStore(rootReducer);
+    const initialState = {  userInfo: { username: 'Harry'} };
+    const store = createStore(rootReducer, initialState);
 
     const { getByText, getByTestId, debug } = render(
       <Provider store={store}>
         <Router>
           <Nav
             location={locationMock}
-            handleLogout={handleLogoutMock}
+            userInfo={{username: 'harry'}}
           />
         </Router>
       </Provider>
     )
 
     expect(getByTestId('logo')).toBeInTheDocument();
+    expect(getByText('Logout')).toBeInTheDocument();
+
+    fireEvent.click(getByText('Logout'));
+
     expect(getByText('Login')).toBeInTheDocument();
-
-    fireEvent.click(getByText('Login'))
-
-    expect(handleLogoutMock.logout).toBeCalledTimes(1)
   });
 
 });

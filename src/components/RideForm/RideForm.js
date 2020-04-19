@@ -109,7 +109,7 @@ class RideForm extends React.Component {
               id="time"
               type="text"
               name="time"
-              placeholder="10:00AM"
+              placeholder="10:00am"
               value={this.state.time}
               onChange={this.handleChange}
               required
