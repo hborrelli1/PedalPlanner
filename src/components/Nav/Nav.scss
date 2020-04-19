@@ -6,11 +6,12 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color:$dark-blue;
-  height:90px;
+  height:70px;
+  z-index: 100;
   @include headerShadow;
 
   .logo-block {
-    max-width:420px;
+    max-width:280px;
     display: flex;
     align-items: center;
     font-size:3rem;
@@ -25,6 +26,7 @@ header {
   nav {
     .login-button {
       @include buttonStyle;
+      margin:0px;
     }
   }
 }

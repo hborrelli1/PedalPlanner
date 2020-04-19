@@ -13,10 +13,6 @@ class Login extends React.Component {
       username: '',
       password: '',
       error: '',
-      defaultUser: {
-        username: 'default',
-        password: 'password'
-      }
     }
   }
 
@@ -38,16 +34,25 @@ class Login extends React.Component {
           id: 1,
           date: 'May 22',
           trail: 'White Ranch Trail',
+          difficulty: 'black',
           location: 'Golden, CO',
           friends: ['Tyler', 'Jeff', 'Doug']
+        },
+        {
+          id: 2,
+          date: 'May 28',
+          trail: 'Buffalo Creek Mini Tour',
+          difficulty: 'black',
+          location: 'Pine, CO',
+          friends: ['Spencer']
         }
       ],
       upcomingRides: []
     }
 
     let validCredentials =
-      (this.state.username === this.state.defaultUser.username)
-        && (this.state.password === this.state.defaultUser.password);
+      (this.state.username === 'pedalUser')
+        && (this.state.password === 'pedalPass');
 
     if (validCredentials) {
       this.setState({ error: '' })

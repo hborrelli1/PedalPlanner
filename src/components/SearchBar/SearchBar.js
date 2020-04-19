@@ -12,10 +12,17 @@ class SearchBar extends React.Component {
     this.state = {
       search: ''
     }
+
+    this.handleTrailClick = this.handleTrailClick.bind(this);
   }
 
   handleChange = (event) => {
     this.setState({ search: event.target.value });
+  }
+
+  handleTrailClick = (event) => {
+    event.preventDefault();
+    this.setState({ search: '' });
   }
 
   render () {
@@ -35,6 +42,7 @@ class SearchBar extends React.Component {
         <SearchButton
           key={trail.id}
           trail={trail}
+          history={this.props.history}
         />
       ));
 
@@ -44,7 +52,10 @@ class SearchBar extends React.Component {
     }
 
     return (
-      <div className="search-wrapper">
+      <form
+        className="search-wrapper"
+        onSubmit={this.handleTrailClick}
+      >
         <Input
           icon='search'
           placeholder='Find a trail for your next ride...'
@@ -52,10 +63,10 @@ class SearchBar extends React.Component {
           onChange={this.handleChange}
         />
 
-      <div className={"matching-trails " + paddingClass}>
+        <div className={"matching-trails " + paddingClass}>
           {trailButtons}
         </div>
-      </div>
+      </form>
     )
   }
 }

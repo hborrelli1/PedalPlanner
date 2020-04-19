@@ -1,11 +1,13 @@
 .login-wrapper {
-  height:calc(100vh - 90px);
+  height:calc(100vh - 70px);
   background-color:$dark-gray;
   width:33%;
+  overflow:hidden;
+  overflow-y:auto;
   @include sideBarShadow;
 
   .tagline-block {
-    padding:100px 50px 50px;
+    padding:3rem 4rem;
     max-width: 400px;
     width: 100%;
     p {

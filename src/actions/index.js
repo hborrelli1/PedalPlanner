@@ -12,3 +12,8 @@ export const setLocalTrails = allTrails => ({
   type: 'SET_LOCAL_TRAILS',
   allTrails
 })
+
+export const planRide = ride => ({
+  type: 'PLAN_RIDE',
+  ride
+})

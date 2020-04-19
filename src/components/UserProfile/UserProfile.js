@@ -22,7 +22,7 @@ const UserProfile = (props) => {
     <div className="user-profile">
       <div className="welcome-block block">
         <h1>
-          <span class="welcome">Welcome back,</span>
+          <span className="welcome">Welcome back,</span>
           <span>Harry</span>
       </h1>
       </div>
