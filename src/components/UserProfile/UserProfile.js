@@ -7,16 +7,29 @@ import { connect } from 'react-redux';
 const UserProfile = (props) => {
   const { userInfo } = props;
   let pastRideBlocks;
+  let upcomingRideBlocks;
 
-  userInfo.pastRides
+  props.upcomingRides.length
+    ? upcomingRideBlocks = userInfo.upcomingRides.map(ride => (
+        <RideBlock
+          key={ride.id}
+          rideInfo={ride}
+          status='future'
+        />
+      ))
+    : upcomingRideBlocks =
+      <p>No upcoming rides to display. Time to plan another ride!</p>;
+
+  props.pastRides.length
     ? pastRideBlocks = userInfo.pastRides.map(ride => (
         <RideBlock
           key={ride.id}
           rideInfo={ride}
+          status='past'
         />
       ))
     : pastRideBlocks =
-      (<p>No past rides to display. Time to plan another ride!</p>);
+      <p>No past rides to display. Time to plan another ride!</p>;
 
   return (
     <div className="user-profile">
@@ -28,7 +41,7 @@ const UserProfile = (props) => {
       </div>
       <div className="ride-log block">
         <h2><span>Upcoming Rides</span></h2>
-
+        {upcomingRideBlocks}
         <h2><span>Past Rides</span></h2>
         {pastRideBlocks}
       </div>
@@ -38,6 +51,8 @@ const UserProfile = (props) => {
 
 const mapStateToProps = (state) => ({
   userInfo: state.userInfo,
+  upcomingRides: state.userInfo.upcomingRides,
+  pastRides: state.userInfo.pastRides,
 })
 
 export default connect(mapStateToProps,null)(UserProfile);
