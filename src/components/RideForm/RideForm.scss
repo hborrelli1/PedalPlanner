@@ -1,0 +1,53 @@
+
+form {
+  width:100%;
+  display:flex;
+  flex-flow:wrap;
+
+  h2 {
+    @include headerStyle;
+    border-bottom:2px solid $orange;
+    margin-bottom:30px;
+    width:100%;
+  }
+
+  .column {
+    width:50%;
+    padding-right:50px;
+
+    .form-block {
+      margin-bottom:20px;
+      display: flex;
+      flex-flow:wrap;
+      flex-direction:column;
+
+      label {
+        @include headerStyle;
+        font-size:1.5rem;
+        margin-bottom:10px;
+      }
+
+      input,
+      textarea,
+      select {
+        @include inputStyling;
+      }
+
+      select {
+        option {
+          padding:5px;
+          margin-bottom:5px;
+        }
+      }
+    }
+
+    &:last-of-type {
+      padding-right:0px;
+      padding-left:50px;
+    }
+
+    button {
+      @include buttonStyle;
+    }
+  }
+}

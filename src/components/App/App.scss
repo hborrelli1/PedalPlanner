@@ -6,16 +6,17 @@ main {
   overflow:hidden;
 
   .dashboard {
-    height:calc(100vh - 90px);
+    height:calc(100vh - 70px);
     width:100%;
     display:flex;
     flex-flow:wrap;
 
     .main-content {
-      padding:50px;
       width:67%;
       height:100%;
-
+      overflow:hidden;
+      overflow-y:auto;
+      z-index: 60;
     }
   }
 }
@@ -23,5 +24,5 @@ main {
 main.app-bg-img-layer {
   width:100%;
   background-size:cover;
-  background-position:33% 90px;
+  background-position:33% 70px;
 }

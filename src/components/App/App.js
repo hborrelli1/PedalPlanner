@@ -7,6 +7,7 @@ import Nav from '../Nav/Nav';
 import Login from '../Login/Login';
 import SearchBar from '../SearchBar/SearchBar';
 import UserProfile from '../UserProfile/UserProfile';
+import TrailDisplay from '../TrailDisplay/TrailDisplay';
 
 import { apiGetLocalTrails } from '../../apiCalls/apiCalls';
 
@@ -42,6 +43,7 @@ class App extends React.Component {
         />
 
         {!userInfo.username && <Redirect to="/login" />}
+
         <Route
           exact
           path="/"
@@ -49,11 +51,30 @@ class App extends React.Component {
             <div className="dashboard">
               <UserProfile />
               <div className="main-content">
-                <SearchBar />
-                <p>Dashboard</p>
+                <SearchBar
+                  history={this.props.history}
+                />
+              
               </div>
             </div>
           )}
+        />
+
+        <Route
+          path="/trails/:id"
+          render={({ match, history }) => {
+            const trail = this.props.localTrails.find(trail => trail.id === parseInt(match.params.id));
+
+            return (<div className="dashboard">
+              <UserProfile />
+              <div className="main-content">
+                <SearchBar
+                  history={this.props.history}
+                />
+                <TrailDisplay trail={trail}/>
+              </div>
+            </div>)
+          }}
         />
         <Route
           path="/login"
@@ -66,6 +87,7 @@ class App extends React.Component {
 
 const mapStateToProps = state => ({
   userInfo: state.userInfo,
+  localTrails: state.localTrails,
 })
 
 export default connect(mapStateToProps,null)(withRouter(App));

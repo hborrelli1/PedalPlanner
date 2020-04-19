@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import greenDifficulty from '../../svgs/green-difficulty.svg';
 import blueDifficulty from '../../svgs/blue-difficulty.svg';
 import blackDifficulty from '../../svgs/black-difficulty.svg';
 import doubleBlackDifficulty from '../../svgs/double-black-difficulty.svg'
 
-const SearchButton = ({ trail }) => {
+const SearchButton = ({ trail, history }) => {
   let trailDifficulty;
   const { id, name, difficulty, location } = trail;
 
@@ -20,8 +21,16 @@ const SearchButton = ({ trail }) => {
     trailDifficulty = doubleBlackDifficulty;
   }
 
+  const handleClick = (id) => {
+    history.push(`/trails/${id}`);
+  }
+
   return (
-    <button className="trail-button">
+    <button
+      type="submit"
+      className="trail-button"
+      onClick={() => handleClick(id)}
+    >
       <img src={trailDifficulty} alt="trail difficulty" />
       {name}
       <span className="trail-location">{location}</span>

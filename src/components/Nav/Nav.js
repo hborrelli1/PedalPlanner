@@ -25,6 +25,16 @@ const Nav = ({ userInfo, logout, location }) => {
       >
         <img src={logo} />
       </Link>
+      {location.pathname !== '/login' && (
+        <nav>
+          <button
+              className="login-button"
+              onClick={handleLogout}
+            >
+              {loginButtonText}
+          </button>
+        </nav>
+      )}
 
     </header>
   )
