@@ -22,10 +22,8 @@ describe('Login Test', () => {
     expect(getByText('Submit')).toBeInTheDocument();
   });
 
-  it('should be able to login', () => {
-    const mockLogin = jest.fn();
+  it('should get error message if login credentials are invalid', () => {
     const store = createStore(rootReducer);
-
     const { getByText, getByPlaceholderText } = render(
       <Provider store={store}>
         <Login />
@@ -41,5 +39,25 @@ describe('Login Test', () => {
     fireEvent.click(submitButton);
 
     expect(getByText('Username or Password are invalid.')).toBeInTheDocument();
+  });
+
+  it('should be able to login successfully', () => {
+    const historyMock = { push: jest.fn() };
+    const store = createStore(rootReducer);
+    const { getByText, getByPlaceholderText, debug } = render(
+      <Provider store={store}>
+        <Login history={historyMock}/>
+      </Provider>
+    );
+
+    const usernameInput = getByPlaceholderText('Username');
+    const passwordInput = getByPlaceholderText('Password');
+    const submitButton = getByText('Submit');
+
+    fireEvent.change(usernameInput, { target: { value: 'pedalUser' }})
+    fireEvent.change(passwordInput, { target: { value: 'pedalPass' }})
+    fireEvent.click(submitButton);
+
+    expect(historyMock.push).toBeCalledTimes(1);
   })
 })

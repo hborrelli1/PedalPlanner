@@ -16,10 +16,14 @@
 
 ## Files modified:
 - [ ] App
-- [ ] Nav
 - [ ] Login
+- [ ] Nav
+- [ ] RideBlock
+- [ ] RideForm
+- [ ] SearchBar
+- [ ] SearchButton
 - [ ] UserProfile
-- [ ] Dashboard
+- [ ] TrailDisplay
 - [ ] actions
 - [ ] reducers
 - [ ] SASS
