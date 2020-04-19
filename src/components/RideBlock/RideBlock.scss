@@ -37,7 +37,9 @@
       max-width:20px;
       margin-right:20px;
     }
-    a {
+    button {
+      background-color:transparent;
+      border:0;
       color:$off-white;
       text-decoration: underline;
       transition:all .3s;
@@ -46,6 +48,7 @@
         opacity:.7;
         transition:all .3s;
         text-decoration: none;
+        cursor:pointer;
       }
     }
   }
