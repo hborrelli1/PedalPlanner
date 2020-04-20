@@ -11,6 +11,10 @@ form {
     width:100%;
   }
 
+  p {
+    color:$off-white;
+  }
+
   .column {
     width:50%;
     padding-right:50px;
@@ -48,6 +52,14 @@ form {
 
     button {
       @include buttonStyle;
+    }
+    .reset-button {
+      padding:0;
+      background-color:transparent;
+      color:$electric-blue;
+      text-decoration:underline;
+      text-transform:capitalize;
+      letter-spacing:2px;
     }
   }
 }

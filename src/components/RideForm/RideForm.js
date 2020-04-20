@@ -153,6 +153,7 @@ class RideForm extends React.Component {
             <div>
               <p>Your ride has been scheduled!</p>
               <button
+                className="reset-button"
                 onClick={this.resetForm}
               >Plan another trip</button>
             </div>

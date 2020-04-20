@@ -36,7 +36,9 @@ const RideBlock = ({ rideInfo, status, history }) => {
   //   opacity: status === 'past' ? '.5' : '1',
   // }
 
-  const messageDisplay = status === 'past' ? '' : (<div><h4><span>Message:</span></h4><p>- {message}</p></div>);
+  const friendsDisplay = friends.length ? (<div><h4><span>Friends:</span></h4><p>- {friendsList}</p></div>) : '' ;
+
+  const messageDisplay = message !== '' ? (<div><h4><span>Message:</span></h4><p>- {message}</p></div>) : '' ;
 
   const handleTrailClick = (event) => {
     event.preventDefault();
@@ -59,8 +61,7 @@ const RideBlock = ({ rideInfo, status, history }) => {
           {trail} | {location}
         </button>
       </p>
-      <h4><span>Friends:</span></h4>
-      <p>{friendsList}</p>
+      {friendsDisplay}
       {messageDisplay}
     </div>
   )
