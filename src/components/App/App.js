@@ -7,7 +7,7 @@ import Nav from '../Nav/Nav';
 import Login from '../Login/Login';
 import SearchBar from '../SearchBar/SearchBar';
 import UserProfile from '../UserProfile/UserProfile';
-import Charts from '../Charts/Charts';
+import LineGraph from '../LineGraph/LineGraph';
 import TrailDisplay from '../TrailDisplay/TrailDisplay';
 
 import { apiGetLocalTrails } from '../../apiCalls/apiCalls';
@@ -55,7 +55,16 @@ class App extends React.Component {
                 <SearchBar
                   history={this.props.history}
                 />
-                <Charts userInfo={userInfo} />
+                <LineGraph
+                  userInfo={userInfo}
+                  type="bar"
+                  display='Distance'
+                />
+                <LineGraph
+                  userInfo={userInfo}
+                  type="line"
+                  display='Elevation'
+                />
               </div>
             </div>
           )}

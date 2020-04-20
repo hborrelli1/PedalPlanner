@@ -1,3 +1,7 @@
 .charts-wrapper {
   padding:0 4rem 4rem;
+
+  #myChart {
+    margin-bottom:50px;
+  }
 }

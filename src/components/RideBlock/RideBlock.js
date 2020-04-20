@@ -32,19 +32,24 @@ const RideBlock = ({ rideInfo, status, history }) => {
     friendsList = 'Solo Ride'
   }
 
-  const blockStyle = {
-    opacity: status === 'past' ? '.5' : '1',
-  }
+  // const blockStyle = {
+  //   opacity: status === 'past' ? '.5' : '1',
+  // }
 
-  const messageDisplay = status === 'past' ? '' : (<div><h4><span>Message:</span></h4><p>- {message}</p></div>);
+  const friendsDisplay = friends.length ? (<div><h4><span>Friends:</span></h4><p>- {friendsList}</p></div>) : '' ;
+
+  const messageDisplay = message !== '' ? (<div><h4><span>Message:</span></h4><p>- {message}</p></div>) : '' ;
 
   const handleTrailClick = (event) => {
     event.preventDefault();
     history.push(`/trails/${trailId}`)
   }
 
+  // style={blockStyle}
   return (
-    <div className="ride-block" style={blockStyle}>
+    <div
+      className="ride-block"
+    >
       <p className="time">{time}</p>
       <p className="date">{formattedDate}</p>
       <h4><span>Trail:</span></h4>
@@ -56,8 +61,7 @@ const RideBlock = ({ rideInfo, status, history }) => {
           {trail} | {location}
         </button>
       </p>
-      <h4><span>Friends:</span></h4>
-      <p>{friendsList}</p>
+      {friendsDisplay}
       {messageDisplay}
     </div>
   )
