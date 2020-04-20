@@ -56,12 +56,10 @@ class App extends React.Component {
                   history={this.props.history}
                 />
                 <Metrics
-                  userInfo={userInfo}
                   type="bar"
                   display='Distance'
                 />
                 <Metrics
-                  userInfo={userInfo}
                   type="line"
                   display='Elevation'
                 />

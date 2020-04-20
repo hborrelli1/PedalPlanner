@@ -11,7 +11,7 @@ export default class Metrics extends Component {
         let moment = require('moment');
         let data;
         const myChartRef = this.chartRef.current.getContext("2d");
-        const { userInfo, type, display } = this.props;
+        const { type, display } = this.props;
 
         const labels = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
 

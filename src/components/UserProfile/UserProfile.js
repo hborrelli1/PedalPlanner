@@ -10,14 +10,6 @@ const UserProfile = (props) => {
   let upcomingRideBlocks;
   let Moment = require('moment');
 
-  console.log(userInfo.pastRides);
-
-  // let sortedRides = userInfo.pastRides.sort((a,b) => {
-  //   return Moment(b.date) - Moment(a.date)
-  // })
-
-  // console.log(sortedRides);
-
   userInfo.upcomingRides.length
     ? upcomingRideBlocks = userInfo.upcomingRides.sort((a,b) => {
       return Moment(a.date) - Moment(b.date)
@@ -66,8 +58,6 @@ const UserProfile = (props) => {
 
 const mapStateToProps = (state) => ({
   userInfo: state.userInfo,
-  // upcomingRides: state.userInfo.upcomingRides,
-  // pastRides: state.userInfo.pastRides,
 })
 
 export default connect(mapStateToProps,null)(UserProfile);
