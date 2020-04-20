@@ -57,6 +57,7 @@ describe('UserProfile Tests', () => {
     const { getByText } = mockRender;
 
     expect(getByText('Welcome back,')).toBeInTheDocument();
+    expect(getByText('Harry')).toBeInTheDocument();
     expect(getByText('Upcoming Rides')).toBeInTheDocument();
     expect(getByText('Past Rides')).toBeInTheDocument();
   });
