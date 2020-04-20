@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import Chart from "chart.js";
-import classes from "./LineGraph.module.css";
+import classes from "./Metrics.module.css";
 
 Chart.defaults.global.elements.line.tension = 0;
 
-export default class LineGraph extends Component {
+export default class Metrics extends Component {
     chartRef = React.createRef();
 
     componentDidMount() {
