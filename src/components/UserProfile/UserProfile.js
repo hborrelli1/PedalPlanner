@@ -8,9 +8,20 @@ const UserProfile = (props) => {
   const { userInfo, history } = props;
   let pastRideBlocks;
   let upcomingRideBlocks;
+  let Moment = require('moment');
+
+  console.log(userInfo.pastRides);
+
+  // let sortedRides = userInfo.pastRides.sort((a,b) => {
+  //   return Moment(b.date) - Moment(a.date)
+  // })
+
+  // console.log(sortedRides);
 
   userInfo.upcomingRides.length
-    ? upcomingRideBlocks = userInfo.upcomingRides.map(ride => (
+    ? upcomingRideBlocks = userInfo.upcomingRides.sort((a,b) => {
+      return Moment(a.date) - Moment(b.date)
+    }).map(ride => (
         <RideBlock
           key={ride.id}
           rideInfo={ride}
@@ -22,14 +33,16 @@ const UserProfile = (props) => {
       <p>No upcoming rides to display. Time to plan another ride!</p>;
 
   userInfo.pastRides.length
-    ? pastRideBlocks = userInfo.pastRides.map(ride => (
+    ? pastRideBlocks = userInfo.pastRides.sort((a,b) => {
+      return Moment(b.date) - Moment(a.date)
+    }).map(ride => (
         <RideBlock
           key={ride.id}
           rideInfo={ride}
           status='past'
           history={history}
         />
-      ))
+    ))
     : pastRideBlocks =
       <p>No past rides to display. Time to plan another ride!</p>;
 
