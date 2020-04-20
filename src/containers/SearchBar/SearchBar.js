@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import { Input } from 'semantic-ui-react'
-import InputIcon from '../InputIcon/InputIcon';
-import SearchButton from '../SearchButton/SearchButton';
+import InputIcon from '../../components/InputIcon/InputIcon';
+import SearchButton from '../../components/SearchButton/SearchButton';
 
 class SearchBar extends React.Component {
   constructor() {

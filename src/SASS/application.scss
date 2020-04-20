@@ -1,17 +1,15 @@
 @import './_mixins.scss';
 @import './_variables.scss';
 
-@import '../components/Nav/Nav.scss';
-@import '../components/App/App.scss';
-@import '../components/Login/Login.scss';
-@import '../components/UserProfile/UserProfile.scss';
-@import '../components/SearchBar/SearchBar.scss';
+@import '../containers/Nav/Nav.scss';
+@import '../containers/App/App.scss';
+@import '../containers/Login/Login.scss';
+@import '../containers/UserProfile/UserProfile.scss';
+@import '../containers/SearchBar/SearchBar.scss';
 @import '../components/RideBlock/RideBlock.scss';
 @import '../components/SearchButton/SearchButton.scss';
 @import '../components/TrailDisplay/TrailDisplay.scss';
-@import '../components/RideForm/RideForm.scss';
-
-
+@import '../containers/RideForm/RideForm.scss';
 
 *,
 *:after,

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import RideForm from '../RideForm/RideForm';
+import RideForm from '../../containers/RideForm/RideForm';
 
 import greenDifficulty from '../../svgs/green-difficulty.svg';
 import blueDifficulty from '../../svgs/blue-difficulty.svg';

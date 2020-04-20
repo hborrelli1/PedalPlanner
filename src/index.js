@@ -7,7 +7,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import rootReducer from './reducers';
 
 import './SASS/application.scss';
-import App from './components/App/App';
+import App from './containers/App/App';
 
 const store = createStore(rootReducer, composeWithDevTools());
 

@@ -7,8 +7,8 @@ import Nav from '../Nav/Nav';
 import Login from '../Login/Login';
 import SearchBar from '../SearchBar/SearchBar';
 import UserProfile from '../UserProfile/UserProfile';
-import Metrics from '../Metrics/Metrics';
-import TrailDisplay from '../TrailDisplay/TrailDisplay';
+import Metrics from '../../components/Metrics/Metrics';
+import TrailDisplay from '../../components/TrailDisplay/TrailDisplay';
 
 import { apiGetLocalTrails } from '../../apiCalls/apiCalls';
 

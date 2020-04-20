@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import RideBlock from '../RideBlock/RideBlock';
+import RideBlock from '../../components/RideBlock/RideBlock';
 
 import { connect } from 'react-redux';
 
