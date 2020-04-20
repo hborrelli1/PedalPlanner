@@ -7,7 +7,7 @@ import Nav from '../Nav/Nav';
 import Login from '../Login/Login';
 import SearchBar from '../SearchBar/SearchBar';
 import UserProfile from '../UserProfile/UserProfile';
-import LineGraph from '../LineGraph/LineGraph';
+import Metrics from '../Metrics/Metrics';
 import TrailDisplay from '../TrailDisplay/TrailDisplay';
 
 import { apiGetLocalTrails } from '../../apiCalls/apiCalls';
@@ -55,12 +55,12 @@ class App extends React.Component {
                 <SearchBar
                   history={this.props.history}
                 />
-                <LineGraph
+                <Metrics
                   userInfo={userInfo}
                   type="bar"
                   display='Distance'
                 />
-                <LineGraph
+                <Metrics
                   userInfo={userInfo}
                   type="line"
                   display='Elevation'
