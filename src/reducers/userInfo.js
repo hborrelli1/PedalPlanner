@@ -15,7 +15,6 @@ const emptyUser = {
 	upcomingRides: []
 }
 
-
 export const userInfo = (state = emptyUser, action) => {
   switch (action.type) {
     case 'LOGIN':

@@ -44,6 +44,8 @@ Ability for users to store/manipulate the data displayed in the application, suc
 - Re-design / build the approach to displaying past/upcoming rides.
 - Create onboarding process for user.
 - Add edit profile section where user can invite more friends, update data, etc.
+- Add styling for responsiveness.
+
 ## Screenshots
 ![Login](https://user-images.githubusercontent.com/15935329/79811459-237a2680-8333-11ea-992a-348f1e4a06e2.png)
 ![Dashboard](https://user-images.githubusercontent.com/15935329/79811475-2bd26180-8333-11ea-8b8e-5f61f34ccf81.png)

@@ -2,13 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-
 import logo from '../../svgs/PedalPlanner-logo.svg';
-
 import { logout } from '../../actions';
 
 const Nav = ({ userInfo, logout, location }) => {
-
   const handleLogout = () => {
     userInfo.username && logout();
   }
@@ -28,14 +25,13 @@ const Nav = ({ userInfo, logout, location }) => {
       {location.pathname !== '/login' && (
         <nav>
           <button
-              className="login-button"
-              onClick={handleLogout}
-            >
-              {loginButtonText}
+            className="login-button"
+            onClick={handleLogout}
+          >
+            {loginButtonText}
           </button>
         </nav>
       )}
-
     </header>
   )
 }

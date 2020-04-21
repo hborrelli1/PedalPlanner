@@ -45,11 +45,8 @@ describe('userInfo reducers test', () => {
   })
 
   it('should return the initial state', () => {
-    // Setup
     const expected = emptyUser;
-    // Execution
     const result = userInfo(undefined, {});
-    // Expectation
     expect(result).toEqual(expected);
   });
 

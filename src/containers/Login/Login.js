@@ -76,7 +76,6 @@ class Login extends React.Component {
       this.setState({ error: '' })
       this.props.login(userData);
       this.props.history.push('/');
-      // Fetch all trails within 200 mile range of denver
       apiGetLocalTrails()
         .then(info => this.props.setTrails(info.trails))
     } else {

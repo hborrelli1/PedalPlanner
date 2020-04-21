@@ -95,7 +95,7 @@ class App extends React.Component {
 
 App.propTypes = {
   userInfo: PropTypes.object,
-  localTrails: PropTypes.object,
+  localTrails: PropTypes.array,
 }
 
 const mapStateToProps = state => ({
