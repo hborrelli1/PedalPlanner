@@ -131,6 +131,14 @@ class Login extends React.Component {
   }
 }
 
+Login.propTypes = {
+  history: PropTypes.object,
+  userInfo: PropTypes.object,
+  localTrails: PropTypes.array,
+  login: PropTypes.func,
+  setTrails: PropTypes.func,
+}
+
 const mapStateToProps = (state) => ({
   userInfo: state.userInfo,
   localTrails: state.localTrails

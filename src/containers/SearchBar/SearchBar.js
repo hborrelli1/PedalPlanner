@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import { Input } from 'semantic-ui-react'
-import InputIcon from '../../components/InputIcon/InputIcon';
 import SearchButton from '../../components/SearchButton/SearchButton';
 
 class SearchBar extends React.Component {
@@ -69,6 +68,11 @@ class SearchBar extends React.Component {
       </form>
     )
   }
+}
+
+SearchBar.propTypes = {
+  localTrails: PropTypes.array,
+  history: PropTypes.object,
 }
 
 const mapStateToProps = state => ({

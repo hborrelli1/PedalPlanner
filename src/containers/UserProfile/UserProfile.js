@@ -56,6 +56,11 @@ const UserProfile = (props) => {
   )
 }
 
+UserProfile.propTypes = {
+  history: PropTypes.object,
+  userInfo: PropTypes.object,
+}
+
 const mapStateToProps = (state) => ({
   userInfo: state.userInfo,
 })

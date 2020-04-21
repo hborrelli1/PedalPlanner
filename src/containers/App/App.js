@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
-import { Route, Link, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
 import Nav from '../Nav/Nav';
@@ -10,15 +11,9 @@ import UserProfile from '../UserProfile/UserProfile';
 import Metrics from '../../components/Metrics/Metrics';
 import TrailDisplay from '../../components/TrailDisplay/TrailDisplay';
 
-import { apiGetLocalTrails } from '../../apiCalls/apiCalls';
-
-import logo from '../../logo.svg';
 import backgroundImage from '../../images/mountain-bike-bg.jpg';
 
 class App extends React.Component {
-  constructor() {
-    super();
-  }
 
   render() {
     const { userInfo, location, history } = this.props;
@@ -55,14 +50,19 @@ class App extends React.Component {
                 <SearchBar
                   history={this.props.history}
                 />
-                <Metrics
-                  type="bar"
-                  display='Distance'
-                />
-                <Metrics
-                  type="line"
-                  display='Elevation'
-                />
+                {userInfo.username
+                  ? (<div>
+                      <Metrics
+                        type="bar"
+                        display='Distance'
+                      />
+                      <Metrics
+                        type="line"
+                        display='Elevation'
+                      />
+                    </div>)
+                  : <p>No past rides to pull data from. Time to plan a ride!</p>
+                }
               </div>
             </div>
           )}
@@ -91,6 +91,11 @@ class App extends React.Component {
       </main>
     );
   }
+}
+
+App.propTypes = {
+  userInfo: PropTypes.object,
+  localTrails: PropTypes.object,
 }
 
 const mapStateToProps = state => ({

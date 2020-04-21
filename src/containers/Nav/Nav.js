@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 import logo from '../../svgs/PedalPlanner-logo.svg';
@@ -23,7 +23,7 @@ const Nav = ({ userInfo, logout, location }) => {
         className="logo-block"
         data-testid='logo'
       >
-        <img src={logo} />
+        <img src={logo} alt="PedalPlanner Logo" />
       </Link>
       {location.pathname !== '/login' && (
         <nav>
@@ -38,6 +38,12 @@ const Nav = ({ userInfo, logout, location }) => {
 
     </header>
   )
+}
+
+Nav.propTypes = {
+  userInfo: PropTypes.object,
+  logout: PropTypes.func,
+  location: PropTypes.object,
 }
 
 const mapStateToProps = (state) => ({

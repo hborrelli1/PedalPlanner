@@ -1,8 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import logoIcon from '../../svgs/pedalPlanner-logo-icon.svg';
-import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router-dom'
 
 import greenDifficulty from '../../svgs/green-difficulty.svg';
 import blueDifficulty from '../../svgs/blue-difficulty.svg';
@@ -12,8 +9,17 @@ import doubleBlackDifficulty from '../../svgs/double-black-difficulty.svg'
 const RideBlock = ({ rideInfo, status, history }) => {
   let moment = require('moment');
   let trailDifficulty;
-  let friendsList
-  const { id, date, time, message, trail, trailId, location, difficulty, friends } = rideInfo;
+  let friendsList;
+  const {
+    date,
+    time,
+    message,
+    trail,
+    trailId,
+    location,
+    difficulty,
+    friends
+  } = rideInfo;
   const formattedDate = moment(date, 'YYYY-MM-DD').format('MM/DD/YY');
 
   if (difficulty === 'green') {
@@ -32,10 +38,6 @@ const RideBlock = ({ rideInfo, status, history }) => {
     friendsList = 'Solo Ride'
   }
 
-  // const blockStyle = {
-  //   opacity: status === 'past' ? '.5' : '1',
-  // }
-
   const friendsDisplay = friends.length ? (<div><h4><span>Friends:</span></h4><p>- {friendsList}</p></div>) : '' ;
 
   const messageDisplay = message !== '' ? (<div><h4><span>Message:</span></h4><p>- {message}</p></div>) : '' ;
@@ -45,7 +47,6 @@ const RideBlock = ({ rideInfo, status, history }) => {
     history.push(`/trails/${trailId}`)
   }
 
-  // style={blockStyle}
   return (
     <div
       className="ride-block"
@@ -65,6 +66,12 @@ const RideBlock = ({ rideInfo, status, history }) => {
       {messageDisplay}
     </div>
   )
+}
+
+RideBlock.propTypes = {
+  rideInfo: PropTypes.object,
+  status: PropTypes.string,
+  history: PropTypes.object,
 }
 
 export default RideBlock;

@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 
 import greenDifficulty from '../../svgs/green-difficulty.svg';
 import blueDifficulty from '../../svgs/blue-difficulty.svg';
@@ -36,6 +35,11 @@ const SearchButton = ({ trail, history }) => {
       <span className="trail-location">{location}</span>
     </button>
   )
+}
+
+SearchButton.propTypes = {
+  trail: PropTypes.object,
+  history: PropTypes.object,
 }
 
 export default SearchButton;

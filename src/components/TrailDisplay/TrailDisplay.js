@@ -16,7 +16,6 @@ const TrailDisplay = ({ trail }) => {
   }
 
   const {
-    id,
     name,
     summary,
     difficulty,
@@ -26,10 +25,7 @@ const TrailDisplay = ({ trail }) => {
     ascent,
     descent,
     high,
-    low,
-    conditionStatus,
-    conditionDetails,
-    conditionDate,
+    low
   } = trail;
 
   if (difficulty === 'green') {
@@ -86,6 +82,10 @@ const TrailDisplay = ({ trail }) => {
       </div>
     </div>
   )
+}
+
+TrailDisplay.propTypes = {
+  trail: PropTypes.object,
 }
 
 export default TrailDisplay;
