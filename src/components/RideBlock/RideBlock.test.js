@@ -28,7 +28,7 @@ describe('RideBlock Tests', () => {
     expect(getByText('04/22/20')).toBeInTheDocument();
     expect(getByText('8:00pm')).toBeInTheDocument();
     expect(getByText('White Ranch Trail | Golden, CO')).toBeInTheDocument();
-    expect(getByText('Tyler, Jeff, Jackson')).toBeInTheDocument();
+    expect(getByText('- Tyler, Jeff, Jackson')).toBeInTheDocument();
     expect(getByText('- Stoked to ride this!')).toBeInTheDocument();
   });
 
@@ -57,7 +57,7 @@ describe('RideBlock Tests', () => {
     expect(getByText('04/22/20')).toBeInTheDocument();
     expect(getByText('8:00pm')).toBeInTheDocument();
     expect(getByText('White Ranch Trail | Golden, CO')).toBeInTheDocument();
-    expect(getByText('Tyler, Jeff, Jackson')).toBeInTheDocument();
+    expect(getByText('- Tyler, Jeff, Jackson')).toBeInTheDocument();
     expect(getByText('- Stoked to ride this!')).toBeInTheDocument();
 
     fireEvent.click(getByText('White Ranch Trail | Golden, CO'));

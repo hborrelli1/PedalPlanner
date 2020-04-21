@@ -74,9 +74,7 @@ class RideForm extends React.Component {
 
   render () {
     let initialSelectValue = <option value="default">-- Select a Friend --</option>
-    const { friends } = this.state;
     const { userInfo } = this.props;
-
     const friendsOptionsList = userInfo.friends
       ? userInfo.friends.map((friend, index) => (
         <option value={friend}>{friend}</option>
@@ -162,6 +160,11 @@ class RideForm extends React.Component {
       </form>
     )
   }
+}
+
+RideForm.propTypes = {
+  userInfo: PropTypes.object,
+  planRide: PropTypes.func,
 }
 
 const mapStateToProps = state => ({

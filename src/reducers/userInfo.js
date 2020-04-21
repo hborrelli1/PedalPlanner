@@ -25,8 +25,6 @@ export const userInfo = (state = emptyUser, action) => {
     case 'PLAN_RIDE':
       let updatedUserInfo = {...state};
       updatedUserInfo.upcomingRides = [...state.upcomingRides, action.ride];
-      // const updatedRides = [...state.upcomingRides, action.ride]
-      // state.upcomingRides = updatedRides
       return state = updatedUserInfo;
     default:
       return state

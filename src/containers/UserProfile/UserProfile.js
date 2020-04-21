@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import RideBlock from '../RideBlock/RideBlock';
+import RideBlock from '../../components/RideBlock/RideBlock';
 
 import { connect } from 'react-redux';
 
@@ -9,14 +9,6 @@ const UserProfile = (props) => {
   let pastRideBlocks;
   let upcomingRideBlocks;
   let Moment = require('moment');
-
-  console.log(userInfo.pastRides);
-
-  // let sortedRides = userInfo.pastRides.sort((a,b) => {
-  //   return Moment(b.date) - Moment(a.date)
-  // })
-
-  // console.log(sortedRides);
 
   userInfo.upcomingRides.length
     ? upcomingRideBlocks = userInfo.upcomingRides.sort((a,b) => {
@@ -64,10 +56,13 @@ const UserProfile = (props) => {
   )
 }
 
+UserProfile.propTypes = {
+  history: PropTypes.object,
+  userInfo: PropTypes.object,
+}
+
 const mapStateToProps = (state) => ({
   userInfo: state.userInfo,
-  // upcomingRides: state.userInfo.upcomingRides,
-  // pastRides: state.userInfo.pastRides,
 })
 
 export default connect(mapStateToProps,null)(UserProfile);

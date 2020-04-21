@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import RideForm from '../RideForm/RideForm';
+import RideForm from '../../containers/RideForm/RideForm';
 
 import greenDifficulty from '../../svgs/green-difficulty.svg';
 import blueDifficulty from '../../svgs/blue-difficulty.svg';
@@ -16,7 +16,6 @@ const TrailDisplay = ({ trail }) => {
   }
 
   const {
-    id,
     name,
     summary,
     difficulty,
@@ -26,10 +25,7 @@ const TrailDisplay = ({ trail }) => {
     ascent,
     descent,
     high,
-    low,
-    conditionStatus,
-    conditionDetails,
-    conditionDate,
+    low
   } = trail;
 
   if (difficulty === 'green') {
@@ -77,7 +73,7 @@ const TrailDisplay = ({ trail }) => {
         </div>
       </div>
       <p className="summary">
-        <blockquote>"{summary}"</blockquote>
+        <span className='quote'>"{summary}"</span>
       </p>
       <div className="plan-ride">
         <RideForm
@@ -86,6 +82,10 @@ const TrailDisplay = ({ trail }) => {
       </div>
     </div>
   )
+}
+
+TrailDisplay.propTypes = {
+  trail: PropTypes.object,
 }
 
 export default TrailDisplay;
