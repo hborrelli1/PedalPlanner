@@ -6,10 +6,10 @@ The app pulls information from [MTB Project Data](https://www.mtbproject.com/dat
 
 ### Learning Goals
 1. Demonstrate the mastery of the following technologies:
-  - React
-  - Redux
-  - Router
-  - Asynchronous JavaScript
+    - React
+    - Redux
+    - Router
+    - Asynchronous JavaScript
 2. Work within constraints to deliver a unique product for your audience which helps them in some way. Your project must utilize your assigned API and technology, and must be built for your assigned audience.
 3. Your applications should have the following core functionality:
 Display the data from the API in a way that applies directly to your audience
