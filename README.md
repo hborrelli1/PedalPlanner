@@ -1,4 +1,4 @@
-## VRAD!
+## PedalPlanner
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 PedalPlanner is an app that allows the user to search, plan, and create rides to invite friends. The app shows past and up-coming rides and displays metrics that would be based on a users past rides, pulling data like distance and elevation gain from the trail data.  
 
