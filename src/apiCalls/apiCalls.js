@@ -9,6 +9,6 @@ const MAX_RESULTS = 'maxResults=500&';
 
 export const apiGetLocalTrails = async () => {
   let data = await fetch(BASE_URL + 'get-trails?' + denver.lat + denver.lon  + MAX_DISTANCE + MAX_RESULTS + KEY)
-              .then(data => data.json());
+                    .then(data => data.json());
   return data;
 }

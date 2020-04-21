@@ -33,20 +33,17 @@ describe('RideBlock Tests', () => {
   });
 
   it('should be able to navigate to trail', () => {
-    const fakeRideData =
-      {
-        date: '2020-04-22',
-        time: '8:00pm',
-        trail: 'White Ranch Trail',
-        trailId: 632917,
-        location: 'Golden, CO',
-        difficulty: 'black',
-        friends: ['Tyler', 'Jeff', 'Jackson'],
-        message: 'Stoked to ride this!'
-      };
-
+    const fakeRideData = {
+      date: '2020-04-22',
+      time: '8:00pm',
+      trail: 'White Ranch Trail',
+      trailId: 632917,
+      location: 'Golden, CO',
+      difficulty: 'black',
+      friends: ['Tyler', 'Jeff', 'Jackson'],
+      message: 'Stoked to ride this!'
+    };
     const historyMock = { push: jest.fn() };
-
     const { getByText } = render(
       <RideBlock
         rideInfo={fakeRideData}
@@ -61,7 +58,7 @@ describe('RideBlock Tests', () => {
     expect(getByText('- Stoked to ride this!')).toBeInTheDocument();
 
     fireEvent.click(getByText('White Ranch Trail | Golden, CO'));
-
+    
     expect(historyMock.push).toBeCalledTimes(1)
   });
 })
