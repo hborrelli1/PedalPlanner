@@ -4,6 +4,13 @@ PedalPlanner is an app that allows the user to search, plan, and create rides to
 
 The app pulls information from [MTB Project Data](https://www.mtbproject.com/data).
 
+Deployed App:
+https://pedal-planner-hb.herokuapp.com/login
+
+Login:
+Username: pedalUser
+Password: pedalPass
+
 ### Learning Goals
 1. Demonstrate the mastery of the following technologies:
     - React
