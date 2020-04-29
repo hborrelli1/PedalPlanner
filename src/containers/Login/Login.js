@@ -99,7 +99,7 @@ class Login extends React.Component {
         <div className="tagline-block">
           <p><span>PLAN</span> a ride</p>
           <p><span>INVITE</span> some friends</p>
-          <p><span>SHRED</span> the trials</p>
+          <p><span>SHRED</span> the trails</p>
         </div>
         <form>
           <h1><span>Sign In</span></h1>
