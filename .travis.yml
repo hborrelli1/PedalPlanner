@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- node
+notifications:
+  email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: QRH0jRx/Ux3/bfDvjlJF9IGasBysqvpjEmCzLw2d3ThAd33tIRNAH1JNo7sKbOXutZn2f+eJctlazIK8JiatDWALnWrfXV57GQonM3mQO3McYZn+BcDq8dfjScz96GSgeky/e4GgaxNyT+SRpAEbNO2xFCp8c3cxihVZZmd16ejjxwss5A5LyAolrkQBq9OcRVddI01agZE+nxXG9IA/hL2XzH2eVuZ2q+ENOXUuuRvtFHe6z1QoSgYTpH49AZrIWxXeJw2/mg8E3NQqnVNeFRYN+3Ove9X3+EZK/ODc5dl8W5fnSGGg57Mb/jH7QcWYM/t2y7hYDgH7eSs2OWuiNTIQ5Cxrv3x8Zwi1rIAJWD26i4wRFCJo/1iRH2scjpKI3uSIt9Rksbo7IPsKEf+MVU3XMj9H3PUUvSD6wylh+zDoYVbZJNKWF+nBWKbqpY6ek1cprQG71VymF4CEc0Q/Nx5dbs8UIxARoSyFqiDJGrtHaCvsyjvq4qO10HZuRofZAdiXJHlaDktY7SsVkT+FHfDYFWkRKiFd5pbicGTCZ2/5xMYOG0B3guznnihjO+Nc8lzKoFgbDjzizGCF5y+XnSa0l9dBurByVmNoRFJhSlZ8xHiRq9DUVXHw3mDOEdV+eqj5AoGcMGSN0yije7Kw2j89aO8+Z2ATe4ph3K/U250=
+  app: pedal-planner-hb
+  skip_cleanup: true
