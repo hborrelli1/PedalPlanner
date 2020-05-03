@@ -20,6 +20,7 @@ export default class Metrics extends Component {
     const myChartRef = this.chartRef.current.getContext("2d");
     const { type, display } = this.props;
     const labels = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
+    const formattedDisplay = (display === 'Distance') ? `${display} (mi)` : `${display} (ft)`;
 
     if (type === 'bar') {
       data = [31,0,12,8,24,0,0];
@@ -34,7 +35,7 @@ export default class Metrics extends Component {
         labels: labels,
         datasets: [
           {
-            label: display,
+            label: formattedDisplay,
             data: data,
             fill: false,
             backgroundColor: 'rgba(66,183,214,.5)',
