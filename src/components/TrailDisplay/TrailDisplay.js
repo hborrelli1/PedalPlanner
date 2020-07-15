@@ -31,7 +31,11 @@ const TrailDisplay = ({ trail }) => {
   if (difficulty === 'green') {
     trailDifficulty = greenDifficulty;
   } else if (difficulty === 'blue') {
-      trailDifficulty = blueDifficulty;
+    trailDifficulty = blueDifficulty;
+  } else if (difficulty === 'greenBlue') {
+    trailDifficulty = greenBlueDifficulty
+  } else if ( difficulty === 'blueBlack') {
+    trailDifficulty = blueBlackDifficulty
   } else if (difficulty === 'black') {
       trailDifficulty = blackDifficulty;
   } else if (difficulty === 'dblack') {
