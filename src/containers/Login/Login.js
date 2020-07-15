@@ -56,7 +56,7 @@ class Login extends React.Component {
       upcomingRides: [
         {
           id: 1,
-          date: '2020-05-02',
+          date: '2020-09-02',
           time: '11:00am',
           trail: 'The Whole Enchilada',
           trailId: 4670265,
