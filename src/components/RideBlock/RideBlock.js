@@ -2,8 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import greenDifficulty from '../../svgs/green-difficulty.svg';
+import greenBlueDifficulty from '../../svgs/green-blue-difficulty.svg';
 import blueDifficulty from '../../svgs/blue-difficulty.svg';
 import blackDifficulty from '../../svgs/black-difficulty.svg';
+import blueBlackDifficulty from '../../svgs/blue-black-difficulty.svg';
 import doubleBlackDifficulty from '../../svgs/double-black-difficulty.svg'
 
 const RideBlock = ({ rideInfo, status, history }) => {
