@@ -29,7 +29,7 @@ const SearchButton = ({ trail, history }) => {
   const handleClick = (id) => {
     history.push(`/trails/${id}`);
   }
-  console.log(difficulty);
+
   return (
     <button
       type="submit"
