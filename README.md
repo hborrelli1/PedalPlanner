@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 PedalPlanner is an app that allows the user to search, plan, and create rides to invite friends. The app shows past and up-coming rides and displays metrics that would be based on a users past rides, pulling data like distance and elevation gain from the trail data.  
 
 The app pulls information from [MTB Project Data](https://www.mtbproject.com/data).  
-Edit:
+Edit:  
 MTB Project has been aquired from onX and they have deprecated these public API's :(. I'm working on access to a new api. 
 
 Login:  
