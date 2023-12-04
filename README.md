@@ -6,7 +6,7 @@ The app pulls information from [MTB Project Data](https://www.mtbproject.com/dat
 Edit:  
 MTB Project has been aquired from onX and they have deprecated these public API's :(. I'm working on access to a new api. 
 
-Login:  
+Fake user credentials:  
 Username: pedalUser  
 Password: pedalPass
 
