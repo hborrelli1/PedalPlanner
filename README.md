@@ -4,7 +4,7 @@ PedalPlanner is an app that allows the user to search, plan, and create rides to
 
 The app pulls information from [MTB Project Data](https://www.mtbproject.com/data).  
 Edit:  
-MTB Project has been aquired from onX and they have deprecated these public API's :(. I'm working on access to a new api. 
+MTB Project has been aquired by OnX and they have deprecated these public API's :(. I'm working on access to a new api. 
 
 Fake user credentials:  
 Username: pedalUser  
