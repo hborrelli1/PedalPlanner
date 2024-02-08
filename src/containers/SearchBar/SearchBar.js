@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 
 import { Input } from 'semantic-ui-react'
 import SearchButton from '../../components/SearchButton/SearchButton';
+import mockedTrails from '../../mocks/mocked-trails';
 
 class SearchBar extends React.Component {
   constructor() {
@@ -25,7 +26,8 @@ class SearchBar extends React.Component {
   }
 
   render () {
-    const { localTrails } = this.props;
+    // const { localTrails } = this.props;
+
 
     let matchingTrails;
     let trailButtons;
@@ -33,7 +35,7 @@ class SearchBar extends React.Component {
     let paddingClass = this.state.search ? 'js-search' : '';
 
     if (this.state.search) {
-      matchingTrails = localTrails.filter(trail => {
+      matchingTrails = mockedTrails.filter(trail => {
         return (trail.name.match(searchRegex)) || (trail.summary.match(searchRegex)) || (trail.location.match(searchRegex));
       })
 
@@ -71,12 +73,12 @@ class SearchBar extends React.Component {
 }
 
 SearchBar.propTypes = {
-  localTrails: PropTypes.array,
+  // localTrails: PropTypes.array,
   history: PropTypes.object,
 }
 
 const mapStateToProps = state => ({
-  localTrails: state.localTrails,
+  // localTrails: state.localTrails,
 })
 
 export default connect(mapStateToProps,null)(SearchBar);

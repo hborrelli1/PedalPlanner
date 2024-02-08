@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { login } from '../../actions';
 import { connect } from 'react-redux';
-
-import { apiGetLocalTrails } from '../../apiCalls/apiCalls';
+// import { apiGetLocalTrails } from '../../apiCalls/apiCalls';
 import { setLocalTrails } from '../../actions';
+import mockTrailInfo from '../../mocks/mocked-trail';
 
 class Login extends React.Component {
   constructor() {
@@ -76,8 +76,9 @@ class Login extends React.Component {
       this.setState({ error: '' })
       this.props.login(userData);
       this.props.history.push('/');
-      apiGetLocalTrails()
-        .then(info => this.props.setTrails(info.trails))
+      // apiGetLocalTrails()
+      //   .then(info => this.props.setTrails(info.trails))
+      this.props.setTrails(mockTrailInfo)
     } else {
       this.setState({ error: 'Username or Password are invalid.' });
     }
