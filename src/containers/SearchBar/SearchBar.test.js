@@ -12,7 +12,7 @@ describe('SearchBar Tests', () => {
   let mockRender;
 
   beforeEach(() => {
-    const initialState = {  localTrails: [{
+    const initialState = { localTrails: [{
       "id": 7015764,
       "name": "Little Scraggy Trail Loop",
       "type": "Ride",

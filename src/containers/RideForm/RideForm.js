@@ -77,7 +77,7 @@ class RideForm extends React.Component {
     const { userInfo } = this.props;
     const friendsOptionsList = userInfo.friends
       ? userInfo.friends.map((friend, index) => (
-        <option value={friend}>{friend}</option>
+        <option key={friend} value={friend}>{friend}</option>
       ))
       : '';
 

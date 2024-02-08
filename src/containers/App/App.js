@@ -12,6 +12,7 @@ import Metrics from '../../components/Metrics/Metrics';
 import TrailDisplay from '../../components/TrailDisplay/TrailDisplay';
 
 import backgroundImage from '../../images/mountain-bike-bg.jpg';
+import mockedTrails from '../../mocks/mocked-trails';
 
 class App extends React.Component {
 
@@ -71,7 +72,8 @@ class App extends React.Component {
         <Route
           path="/trails/:id"
           render={({ match, history }) => {
-            const trail = this.props.localTrails.find(trail => trail.id === parseInt(match.params.id));
+            // const trail = this.props.localTrails.find(trail => trail.id === parseInt(match.params.id));
+            const trail = mockedTrails.find(trail => trail.id === parseInt(match.params.id));
 
             return (<div className="dashboard">
               <UserProfile history={history} />
@@ -95,12 +97,12 @@ class App extends React.Component {
 
 App.propTypes = {
   userInfo: PropTypes.object,
-  localTrails: PropTypes.array,
+  // localTrails: PropTypes.array,
 }
 
 const mapStateToProps = state => ({
   userInfo: state.userInfo,
-  localTrails: state.localTrails,
+  // localTrails: state.localTrails,
 })
 
 export default connect(mapStateToProps,null)(withRouter(App));

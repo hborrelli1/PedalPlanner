@@ -45,7 +45,8 @@ const TrailDisplay = ({ trail }) => {
   }
 
   const backgroundStyle = {
-    backgroundImage: `url(${imgMedium})`
+    // backgroundImage: `url(${imgMedium})`
+    backgroundImage: `url(${process.env.PUBLIC_URL}/little-scraggy-loop.jpg)`
   }
 
   return (
